@@ -11,10 +11,10 @@
  
  * Transformação
     - Dbt
-    
+
  * Bibliotecas
- - Pandas
- - yfinance
- - sqlalchemy
- - dotenv
- - os 
+    - Pandas
+    - yfinance
+    - sqlalchemy
+    - dotenv
+    - os 
