@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import os 
 
-load_dotenv()
+load_dotenv() # inicializando o Dotenv
 
 commodities = ['CL=F','GC=F','SI=F'] #lista para guardar os ativos 
 
@@ -25,7 +25,6 @@ engine = create_engine(DATABASE_URL)
 #função que pega as informações das Commodities
 def buscar_dados_commodities(ticker, periodo='5d', intervalo='1d'):
     yf_ticker = yf.Ticker(ticker)
-   ## ticker = yf.Ticker('CL=F') # retorna as informações do ticker
     dados = yf_ticker.history(period=periodo, interval=intervalo)[['Close']] # retorna um data frame com os dados dos parametros
     dados['ticker'] = ticker # criando uma coluna nova para pegar a informação do tickeer
     return dados
